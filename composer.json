@@ -1,0 +1,18 @@
+{
+    "name": "ahmedhegazee/releans",
+    "description": "Releans SMS Gateway",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ahmedhegazee\\Releans\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ahmed Hegazy",
+            "email": "ahmedhegazee@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
