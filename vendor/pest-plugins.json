@@ -1,0 +1,10 @@
+[
+    "Pest\\Plugins\\Coverage",
+    "Pest\\Plugins\\Init",
+    "Pest\\Plugins\\Environment",
+    "Pest\\Plugins\\Help",
+    "Pest\\Plugins\\Memory",
+    "Pest\\Plugins\\Printer",
+    "Pest\\Plugins\\Retry",
+    "Pest\\Plugins\\Version"
+]
