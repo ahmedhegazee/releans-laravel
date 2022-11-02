@@ -3,7 +3,7 @@
 namespace Ahmedhegazee\Releans\Actions;
 
 use Ahmedhegazee\Releans\Contracts\AbstractAction;
-use Ahmedhegazee\Releans\DTO\BalanceDTO;
+use Ahmedhegazee\Releans\DataTransferObject\BalanceDTO;
 
 class GetBalanceAction extends AbstractAction
 {
@@ -14,6 +14,6 @@ class GetBalanceAction extends AbstractAction
             ->setUrl("balance")
             ->get()
             ->json();
-        return BalanceDTO::fromJson($response);
+        return new BalanceDTO($response);
     }
 }

@@ -1,22 +1,25 @@
-<?php 
+<?php
 
 namespace Ahmedhegazee\Releans\Actions;
 
 use Ahmedhegazee\Releans\Contracts\AbstractAction;
+use Ahmedhegazee\Releans\DataTransferObject\BalanceDTO;
 
-class SendSingleSMSAction extends AbstractAction{
+class SendSingleSMSAction extends AbstractAction
+{
     public function __construct(private string $phoneNumber)
     {
     }
-    public  function execute(){
+    public  function execute()
+    {
         $response = $this->client
             ->setUrl("message")
-            ->post($this->format)
+            ->post($this->format())
             ->json();
-        return BalanceDTO::fromJson($response);
+        return new BalanceDTO($response);
     }
-    public function format():string
+    private function format(): string
     {
-        return "sender=".config('releans.sender_id')."&mobile=".$this->phone."&content=Hello";
+        return "sender=" . config('releans.sender_id') . "&mobile=" . $this->phone . "&content=Hello";
     }
 }
